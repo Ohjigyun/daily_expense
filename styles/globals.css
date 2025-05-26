@@ -1,0 +1,17 @@
+@font-face {
+  font-family:"silka-regular-webfont";
+  src:url("../assets/font/silka-regular-webfont.woff2") format("woff2"),
+      url("../assets/font/silka-regular-webfont.woff") format("woff");
+  font-display:swap;
+}
+
+@font-face {
+  font-family:"noto-sans-kr-v12-latin-700";
+  src:url("../assets/font/noto-sans-kr-v12-latin-700.woff2") format("woff2"),
+      url("../assets/font/noto-sans-kr-v12-latin-700.woff") format("woff");
+  font-display:swap;
+}
+
+input {
+    text-align: center;
+}
