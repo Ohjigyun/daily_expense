@@ -44,17 +44,3 @@ export const tdSx = {
   whiteSpace: 'nowrap',
   overflow: 'hidden',
 }
-
-export const numberInputSx = {
-  maxWidth: '4rem',
-  fontSize: '12px',
-}
-
-export const numberSx = {
-  fontSize: '12px',
-}
-
-export const qtyInputSx = {
-  fontSize: '14px',
-  maxWidth: '3rem',
-}

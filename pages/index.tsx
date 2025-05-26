@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Paper, Input } from '@mui/material'
-import { tableContainerSx, tableHeaderSx, tableSx, numberInputSx, qtyInputSx, numberSx, headTheme, bodyTheme, textAlignSx, smallTableContainerSx } from '../styles/tableStyles'
+import { tableContainerSx, tableHeaderSx, tableSx, headTheme, bodyTheme, textAlignSx, smallTableContainerSx } from '../styles/tableStyles'
 import{ useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import InputLabel from '@mui/material/InputLabel';
@@ -13,7 +13,6 @@ import Head from 'next/head'
 export default function Home() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'))
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const initialPositions = [
   '팀장님', '대리님', '대리님', '주임님', '주임님',
   '주임님', '사원님', '사원님', '인턴사원', '인턴사원'
@@ -58,13 +57,6 @@ export default function Home() {
     setEtc(newEtc);
   }
 
-  const totalChangeHandler = (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    const newTotal = [...total];
-    newTotal[index] = value === '' ? 0 : Number(value);
-    setTotal(newTotal);
-  }
-
 useEffect(() => {
   const newTotal = workingDays.map((days, idx) => {
     const isTeamLeader = position[idx] === '팀장님';
@@ -78,30 +70,6 @@ useEffect(() => {
   const sum = total.reduce((acc, cur) => acc + cur, 0);
   setSumTotal(sum);
 }, [total]);
-
-  // const itemCostPriceChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setItemCostPrice(parseInt(e.target.value))
-  // }
-  
-  // const itemSalePriceChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setItemSalePrice(parseInt(e.target.value))
-  // }
-
-  // const competitorsChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setCompetitors(e.target.value)
-  // }
-
-  // const competitorsCostPriceChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setCompetitorsCostPrice(parseInt(e.target.value))
-  // }
-  
-  // const competitorsSalePriceChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setCompetitorsSalePrice(parseInt(e.target.value))
-  // }
-
-  // const qtyChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setQty(parseInt(e.target.value))
-  // }
 
   return (
     <div>
