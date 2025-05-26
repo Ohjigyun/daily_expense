@@ -82,7 +82,7 @@ useEffect(() => {
           <ThemeProvider theme={headTheme}>
             <TableHead sx={tableHeaderSx}>
               <TableRow>
-                <TableCell sx={textAlignSx} colSpan={4}>일비 계산기</TableCell>
+                <TableCell sx={{ textAlign: 'center', fontSize: isDesktop ? '20px' : '12px'}} colSpan={4}>일비 계산기</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell sx={textAlignSx}>이름</TableCell>
